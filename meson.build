@@ -7,7 +7,14 @@ c_args = []
 cpp_args = []
 link_args = []
 name_suffix = []
-dependencies = []
+
+# Raylib subproject
+raylib_subproject = subproject('raylib')
+raylib_dep = raylib_subproject.get_variable('raylib_dep')
+
+dependencies = [
+  raylib_dep,
+]
 
 # Project files
 inc_dir = include_directories(
