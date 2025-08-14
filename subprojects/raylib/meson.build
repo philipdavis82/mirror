@@ -63,18 +63,26 @@ raylib_sources = files(
 )
 
 # Include directories
-raylib_inc = include_directories('src', 'src/external/glfw/include')
+raylib_inc  = include_directories('src', 'src/external/glfw/include')
 
+# raylib_inc += include_directories('/usr/include/libdrm')
+# platform_link_args += ['-lGLESv2', '-lEGL', '-ldrm', '-lgbm', '-lpthread', '-lrt', '-lm', '-ldl']
 # Raylib library
 raylib_lib = static_library('raylib',
   raylib_sources,
   include_directories: raylib_inc,
   c_args: [
     '-DRAYLIB_IMPLEMENTATION',
-    '-DPLATFORM_DESKTOP',
     '-D_GNU_SOURCE',
-    '-DGRAPHICS_API_OPENGL_33',
-    '-D_GLFW_X11',
+
+    # '-DPLATFORM_DESKTOP',
+    # '-DGRAPHICS_API_OPENGL_33',
+    # '-D_GLFW_X11',
+
+    '-DPLATFORM_DRM',
+    '-DGRAPHICS_API_OPENGL_ES2',
+    '-DEGL_NO_X11',
+
     '-DSUPPORT_FILEFORMAT_PNG',
     '-DSUPPORT_FILEFORMAT_JPG', 
     '-DSUPPORT_FILEFORMAT_GIF',
