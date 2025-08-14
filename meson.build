@@ -9,7 +9,10 @@ link_args = []
 name_suffix = []
 
 # Raylib subproject
-raylib_subproject = subproject('raylib')
+raylib_subproject = subproject('raylib', default_options: [
+  'platform=' + get_option('raylib_platform'),
+  'graphics_api=' + get_option('raylib_graphics_api')
+])
 raylib_dep = raylib_subproject.get_variable('raylib_dep')
 
 dependencies = [

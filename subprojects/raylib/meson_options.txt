@@ -1,0 +1,5 @@
+option('platform', type: 'combo', choices: ['desktop', 'drm'], value: 'desktop',
+       description: 'Choose the platform target: desktop (X11/GLFW) or drm (Direct Rendering Manager)')
+
+option('graphics_api', type: 'combo', choices: ['opengl33', 'opengl_es2'], value: 'opengl33',
+       description: 'Graphics API to use: OpenGL 3.3 for desktop or OpenGL ES 2.0 for embedded/DRM')
