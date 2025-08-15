@@ -61,7 +61,7 @@ if host_machine.system() == 'linux' or host_machine.system() == 'undefined'
     endif
     
     # DRM specific libraries
-    platform_link_args += ['-lGLESv2', '-lEGL', '-ldrm', '-lgbm', '-lrt', '-lm', '-ldl']
+    platform_link_args += ['-lGLESv2', '-lGL' ,'-lEGL', '-ldrm', '-lgbm', '-lrt', '-lm', '-ldl']
   endif
   
 elif host_machine.system() == 'windows'
