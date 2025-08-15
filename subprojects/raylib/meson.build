@@ -91,7 +91,7 @@ endif
 if platform_option == 'desktop'
   raylib_inc = include_directories('src', 'src/external/glfw/include')
 elif platform_option == 'drm'
-  raylib_inc = include_directories('src')
+  raylib_inc = include_directories('src', '/usr/include/libdrm')
 endif
 
 # Platform and graphics API specific compilation flags
