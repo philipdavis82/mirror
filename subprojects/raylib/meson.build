@@ -140,4 +140,5 @@ raylib_dep = declare_dependency(
   link_with: raylib_lib,
   include_directories: raylib_inc,
   dependencies: platform_deps,
+  link_args: platform_link_args
 )
